@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess App - Docker/EC2 Ready</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f4e4bc; margin: 0; padding: 20px; }
+        .files { background: white; padding: 20px; margin: 20px auto; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .file { margin: 15px 0; padding: 15px; background: #f8f9fa; border-left: 5px solid #28a745; border-radius: 5px; }
+        .file h3 { color: #28a745; margin-top: 0; }
+        .file ul { text-align: left; color: #333; }
+        button { background: #007bff; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 5px; cursor: pointer; margin: 10px; }
+        button:hover { background: #0056b3; }
+        h1 { color: #dc3545; font-size: 2.5em; }
+    </style>
+</head>
+<body>
+    <h1>♔ Chess App Complete ♛</h1>
+    <p>Open any HTML file below to play. Use Docker/EC2 for server.</p>
+    
+    <div class="files">
+        <div class="file">
+            <h3>🎮 chess-final.html</h3>
+            <ul>
+                <li>✅ Full moves + captures</li>
+                <li>✅ No king capture (protected)</li>
+                <li>✅ Check/CHECKMATE detection</li>
+                <li>✅ Win screen</li>
+                <li>Click piece → green → move/capture</li>
+            </ul>
+            <button onclick="window.open('chess-final.html')">Play chess-final.html</button>
+        </div>
+    </div>
+
+    <div class="files">
+        <h2>Docker/EC2 Deploy</h2>
+        <p><code>docker build -t chess . && docker run -p 8080:80 chess</code></p>
+        <p>Access: <code>http://localhost:8080/chess-final.html</code></p>
+        <p>EC2: scp files, docker run -p 80:80</p>
+    </div>
+
+    <script>
+        // Auto-open main game
+        setTimeout(() => {
+            window.open('chess-final.html', '_blank');
+        }, 1000);
+    </script>
+</body>
+</html>
+
